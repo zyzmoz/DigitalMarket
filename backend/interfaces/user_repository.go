@@ -1,8 +1,8 @@
 package interfaces
 
 import (
-	"github.com/jinzhu/gorm"
 	"github.com/zyzmoz/DigitalMarket/domain"
+	"gorm.io/gorm"
 )
 
 type UserRepository struct {
@@ -24,6 +24,7 @@ func (ur *UserRepository) FindOne(id string) (user domain.User, err error) {
 func (ur *UserRepository) Create(userData domain.User) (user domain.User, err error) {
 	ur.DB.Create(&userData)
 
+	user = userData
 	return
 }
 

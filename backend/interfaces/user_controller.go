@@ -2,9 +2,9 @@ package interfaces
 
 import (
 	"github.com/gofiber/fiber/v2"
-	"github.com/jinzhu/gorm"
 	"github.com/zyzmoz/DigitalMarket/domain"
 	"github.com/zyzmoz/DigitalMarket/usecases"
+	"gorm.io/gorm"
 )
 
 type UserController struct {
