@@ -26,7 +26,7 @@
 
 #### Day 2
   - [x] Product CRUD
-
+  - [x] Docker
 #### Day 3
   - [ ] Order CRUD
 
