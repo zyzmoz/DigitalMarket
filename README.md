@@ -25,7 +25,16 @@
   - [x] Users CRUD
 
 #### Day 2
-  - [ ] Product CRUD
+  - [x] Product CRUD
 
 #### Day 3
-  - [ ] TBD
+  - [ ] Order CRUD
+
+#### Day 4
+  - [ ] Payment CRUD
+
+#### Day 5
+  - [ ] Product Request CRUD
+
+#### Day 5
+  - [ ] Redeem Functionality
