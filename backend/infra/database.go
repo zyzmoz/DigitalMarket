@@ -15,7 +15,7 @@ func InitDb() {
 
 	switch os.Getenv("DATABASE_DRIVER") {
 	case "mssql":
-		dsn := "sqlserver://gorm:LoremIpsum86@localhost:9930?database=gorm"
+		dsn := "sqlserver://" + os.Getenv("DATABASE_USER") + ":" + os.Getenv("DATABASE_PASSWORD") + "@mssql:1433?database=digitalmarket"
 		database.DBConn, err = gorm.Open(sqlserver.Open(dsn), &gorm.Config{})
 	default:
 		database.DBConn, err = gorm.Open(sqlite.Open("temp.db"), &gorm.Config{})
