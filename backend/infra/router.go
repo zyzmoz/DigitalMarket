@@ -4,9 +4,9 @@ import (
 	"os"
 
 	"github.com/gofiber/fiber/v2"
-	"github.com/jinzhu/gorm"
 	"github.com/zyzmoz/DigitalMarket/interfaces"
 	"github.com/zyzmoz/DigitalMarket/usecases"
+	"gorm.io/gorm"
 )
 
 func Dispatch(app *fiber.App, db *gorm.DB, logger usecases.Logger) {
@@ -19,5 +19,4 @@ func Dispatch(app *fiber.App, db *gorm.DB, logger usecases.Logger) {
 	app.Delete("/api/v1/user/:id", userCtrl.Delete)
 
 	app.Listen(":" + os.Getenv("SERVER_PORT"))
-	defer db.Close()
 }

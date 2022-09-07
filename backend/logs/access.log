@@ -19,3 +19,15 @@
 2022/09/06 22:21:47 127.0.0.1:51394 DELETE http://localhost:8080/api/v1/user/1
 2022/09/06 22:21:51 127.0.0.1:51394 GET http://localhost:8080/api/v1/user
 2022/09/06 22:21:52 127.0.0.1:51394 GET http://localhost:8080/api/v1/user
+2022/09/06 23:01:21 127.0.0.1:51757 GET http://localhost:8080/api/v1/user
+2022/09/06 23:01:32 127.0.0.1:51757 POST http://localhost:8080/api/v1/user
+2022/09/06 23:02:17 127.0.0.1:51762 POST http://localhost:8080/api/v1/user
+2022/09/06 23:02:24 127.0.0.1:51762 GET http://localhost:8080/api/v1/user
+2022/09/06 23:02:26 127.0.0.1:51762 GET http://localhost:8080/api/v1/user
+2022/09/06 23:02:27 127.0.0.1:51762 GET http://localhost:8080/api/v1/user
+2022/09/06 23:03:36 127.0.0.1:51775 POST http://localhost:8080/api/v1/user
+2022/09/06 23:03:39 127.0.0.1:51775 GET http://localhost:8080/api/v1/user
+2022/09/06 23:04:25 127.0.0.1:51785 POST http://localhost:8080/api/v1/user
+2022/09/06 23:04:28 127.0.0.1:51785 GET http://localhost:8080/api/v1/user
+2022/09/06 23:05:35 127.0.0.1:51792 POST http://localhost:8080/api/v1/user
+2022/09/06 23:05:42 127.0.0.1:51792 GET http://localhost:8080/api/v1/user
