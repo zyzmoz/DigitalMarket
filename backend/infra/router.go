@@ -12,6 +12,7 @@ import (
 func Dispatch(app *fiber.App, db *gorm.DB, logger usecases.Logger) {
 	userCtrl := interfaces.NewUserController(db, logger)
 	productCtrl := interfaces.NewProductController(db, logger)
+	orderCtrl := interfaces.NewOrderController(db, logger)
 
 	app.Get("/api/v1/user/:id", userCtrl.FindOne)
 	app.Get("/api/v1/user", userCtrl.FindAll)
@@ -24,6 +25,12 @@ func Dispatch(app *fiber.App, db *gorm.DB, logger usecases.Logger) {
 	app.Post("/api/v1/product", productCtrl.Create)
 	app.Put("/api/v1/product", productCtrl.Update)
 	app.Delete("/api/v1/product/:id", productCtrl.Delete)
+
+	app.Get("/api/v1/order/:id", orderCtrl.FindOne)
+	app.Get("/api/v1/order", orderCtrl.FindAll)
+	app.Post("/api/v1/order", orderCtrl.Create)
+	app.Put("/api/v1/order", orderCtrl.Update)
+	app.Delete("/api/v1/order/:id", orderCtrl.Delete)
 
 	app.Listen(":" + os.Getenv("SERVER_PORT"))
 }

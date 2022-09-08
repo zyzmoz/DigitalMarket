@@ -27,13 +27,11 @@
 #### Day 2
   - [x] Product CRUD
   - [x] Docker
+  - [x] Order CRUD
 #### Day 3
-  - [ ] Order CRUD
-
-#### Day 4
   - [ ] Payment CRUD
 
-#### Day 5
+#### Day 4
   - [ ] Product Request CRUD
 
 #### Day 5
