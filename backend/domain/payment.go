@@ -1,12 +1,14 @@
 package domain
 
-import "github.com/jinzhu/gorm"
+import "gorm.io/gorm"
 
 type Payments []Payment
 
 type Payment struct {
 	gorm.Model
-	ProviderVerification string  `json:"providerVerification"`
-	Product              int     `json:"product"`
-	Total                float32 `json:"total"`
+	ID                   string   `gorm:"primaryKey" json:"id"`
+	Completed            bool     `json:"completed"`
+	Product              *int     `json:"product"`
+	ProviderVerification string   `json:"providerVerification"`
+	Total                *float32 `json:"total"`
 }

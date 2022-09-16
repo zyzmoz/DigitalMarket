@@ -2,6 +2,7 @@ package interfaces
 
 import (
 	"github.com/gofiber/fiber/v2"
+	"github.com/google/uuid"
 	"github.com/zyzmoz/DigitalMarket/domain"
 	"github.com/zyzmoz/DigitalMarket/usecases"
 	"gorm.io/gorm"
@@ -63,7 +64,15 @@ func (oc *OrderController) Create(ctx *fiber.Ctx) error {
 		return err
 	}
 
-	return ctx.JSON(orderData)
+	orderData.ID = uuid.New().String()
+
+	order, err := oc.OrderInteractor.Create(orderData)
+	if err != nil {
+		ctx.Status(500).JSON(err)
+		return err
+	}
+
+	return ctx.JSON(order)
 }
 
 func (oc *OrderController) Update(ctx *fiber.Ctx) error {
