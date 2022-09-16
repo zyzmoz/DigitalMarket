@@ -2,6 +2,7 @@ package interfaces
 
 import (
 	"github.com/gofiber/fiber/v2"
+	"github.com/google/uuid"
 	"gorm.io/gorm"
 
 	"github.com/zyzmoz/DigitalMarket/domain"
@@ -63,6 +64,8 @@ func (pc *ProductController) Create(ctx *fiber.Ctx) error {
 		ctx.Status(500).JSON(err)
 		return err
 	}
+
+	productData.ID = uuid.New().String()
 
 	product, err := pc.ProductInteractor.Create(productData)
 	if err != nil {

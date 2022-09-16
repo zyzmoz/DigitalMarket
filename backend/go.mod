@@ -4,7 +4,7 @@ go 1.19
 
 require (
 	github.com/gofiber/fiber/v2 v2.37.0
-	github.com/jinzhu/gorm v1.9.16
+	github.com/google/uuid v1.3.0
 	gorm.io/driver/sqlite v1.3.6
 	gorm.io/driver/sqlserver v1.3.2
 	gorm.io/gorm v1.23.8
