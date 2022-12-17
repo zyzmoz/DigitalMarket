@@ -29,7 +29,7 @@ func (pr *ProductRepository) Create(productData domain.Product) (product domain.
 }
 
 func (pr *ProductRepository) Update(productData domain.Product) (product domain.Product, err error) {
-	pr.DB.First(&product, productData.ID)
+	pr.DB.First(&product, "ID = ?", productData.ID)
 	pr.DB.Model(&product).Save(&productData)
 
 	return productData, err
