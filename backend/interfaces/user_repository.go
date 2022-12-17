@@ -29,7 +29,7 @@ func (ur *UserRepository) Create(userData domain.User) (user domain.User, err er
 }
 
 func (ur *UserRepository) Update(userData domain.User) (user domain.User, err error) {
-	ur.DB.First(&user, userData.ID)
+	ur.DB.First(&user, "ID = ?", userData.ID)
 	ur.DB.Model(&user).Save(&userData)
 
 	return userData, err

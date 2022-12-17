@@ -29,7 +29,7 @@ func (or *OrderRepository) Create(orderData domain.Order) (order domain.Order, e
 }
 
 func (or *OrderRepository) Update(orderData domain.Order) (order domain.Order, err error) {
-	or.DB.First(&order, orderData.ID)
+	or.DB.First(&order, "ID = ?", orderData.ID)
 
 	or.DB.Model(&order).Save(&orderData)
 

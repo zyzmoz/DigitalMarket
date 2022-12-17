@@ -28,4 +28,5 @@ func InitDb() {
 	database.DBConn.AutoMigrate(&domain.User{})
 	database.DBConn.AutoMigrate(&domain.Product{})
 	database.DBConn.AutoMigrate(&domain.Order{})
+	database.DBConn.AutoMigrate(&domain.Payment{})
 }

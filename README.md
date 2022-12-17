@@ -29,10 +29,11 @@
   - [x] Docker
   - [x] Order CRUD
 #### Day 3
-  - [ ] Payment CRUD
-
-#### Day 4
+  - [x] Payment CRUD
   - [ ] Product Request CRUD
 
-#### Day 5
+#### Day 4
   - [ ] Redeem Functionality
+
+#### Day 5
+  - [ ] TBD

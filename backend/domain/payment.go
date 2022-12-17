@@ -6,9 +6,10 @@ type Payments []Payment
 
 type Payment struct {
 	gorm.Model
-	ID                   string   `gorm:"primaryKey" json:"id"`
-	Completed            bool     `json:"completed"`
-	Product              *int     `json:"product"`
-	ProviderVerification string   `json:"providerVerification"`
-	Total                *float32 `json:"total"`
+	ID                   string `gorm:"primaryKey"`
+	Order                string
+	Completed            bool
+	Product              string
+	ProviderVerification string
+	Total                *float32
 }

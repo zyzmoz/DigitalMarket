@@ -86,7 +86,15 @@ func (oc *OrderController) Update(ctx *fiber.Ctx) error {
 		return err
 	}
 
-	return ctx.JSON(orderData)
+	order, err := oc.OrderInteractor.Update(orderData)
+	if err != nil {
+		oc.Logger.LogError("%s", err)
+
+		ctx.Status(500).JSON(err)
+		return err
+	}
+
+	return ctx.JSON(order)
 }
 
 func (oc *OrderController) Delete(ctx *fiber.Ctx) error {

@@ -6,9 +6,9 @@ type Products []Product
 
 type Product struct {
 	gorm.Model
-	ID        string  `gorm:"primaryKey" json:"id"`
-	Name      string  `json:"name"`
-	Version   string  `json:"version"`
-	Publisher *int64  `json:"publisher"`
-	Price     float32 `json:"price"`
+	ID        string `gorm:"primaryKey"`
+	Name      string
+	Version   string
+	Publisher *int64
+	Price     float32
 }
