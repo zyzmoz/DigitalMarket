@@ -7,7 +7,7 @@ type Orders []Order
 type Order struct {
 	gorm.Model
 	ID      string `gorm:"primaryKey"`
-	Product *int64
 	User    *int64
+	Status  string
 	Price   float32
 }

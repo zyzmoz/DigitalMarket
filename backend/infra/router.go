@@ -13,6 +13,7 @@ func Dispatch(app *fiber.App, db *gorm.DB, logger usecases.Logger) {
 	userCtrl := interfaces.NewUserController(db, logger)
 	productCtrl := interfaces.NewProductController(db, logger)
 	orderCtrl := interfaces.NewOrderController(db, logger)
+	orderItemCtrl := interfaces.NewOrderItemController(db, logger)
 	paymentCtrl := interfaces.NewPaymentController(db, logger)
 
 	app.Get("/api/v1/user/:id", userCtrl.FindOne)
@@ -32,6 +33,12 @@ func Dispatch(app *fiber.App, db *gorm.DB, logger usecases.Logger) {
 	app.Post("/api/v1/order", orderCtrl.Create)
 	app.Put("/api/v1/order", orderCtrl.Update)
 	app.Delete("/api/v1/order/:id", orderCtrl.Delete)
+
+	app.Get("/api/v1/orderitem/:id", orderItemCtrl.FindOne)
+	app.Get("/api/v1/orderitem", orderItemCtrl.FindAll)
+	app.Post("/api/v1/orderitem", orderItemCtrl.Create)
+	app.Put("/api/v1/orderitem", orderItemCtrl.Update)
+	app.Delete("/api/v1/orderitem/:id", orderItemCtrl.Delete)
 
 	app.Get("/api/v1/payment/:id", paymentCtrl.FindOne)
 	app.Get("/api/v1/payment", paymentCtrl.FindAll)

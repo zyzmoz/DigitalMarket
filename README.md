@@ -30,10 +30,15 @@
   - [x] Order CRUD
 #### Day 3
   - [x] Payment CRUD
-  - [ ] Product Request CRUD
 
 #### Day 4
-  - [ ] Redeem Functionality
+  - [x] OrderItem CRUD
+  - [x] DB Model Refactor
+  - [x] Docker Updates
 
-#### Day 5
+#### TBD
+  - [ ] Docker env
+  - [ ] API Auth
+  - [ ] Redeem Functionality
+  - [ ] Product Request CRUD
   - [ ] TBD
