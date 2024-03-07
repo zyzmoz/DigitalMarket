@@ -9,7 +9,6 @@ type Payment struct {
 	ID                   string `gorm:"primaryKey"`
 	Order                string
 	Completed            bool
-	Product              string
 	ProviderVerification string
 	Total                *float32
 }

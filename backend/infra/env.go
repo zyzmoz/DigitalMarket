@@ -15,6 +15,7 @@ func Load(logger usecases.Logger) {
 
 	if err != nil {
 		logger.LogError("%s", err)
+		return
 	}
 	defer file.Close()
 
