@@ -4,7 +4,7 @@ services:
   golang:
     container_name: "golang"
     restart: always
-    build: ./backend
+    build: ./backend/Dockerdile.local
     ports:
       - ${SERVER_PORT}:8080
     environment:
