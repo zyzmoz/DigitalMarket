@@ -20,7 +20,7 @@ func InitDb() {
 		dsn := fmt.Sprintf("sqlserver://%s:%s@%s:%s?database=%s", os.Getenv("DATABASE_USER"), os.Getenv("DATABASE_PASSWORD"), os.Getenv("DATABASE_HOST"), os.Getenv("DATABASE_PORT"), os.Getenv("DATABASE_NAME"))
 		database.DBConn, err = gorm.Open(sqlserver.Open(dsn), &gorm.Config{})
 	case "mysql":
-		dsn := fmt.Sprintf("%s:%s"+"@tcp(%s:%s)/%s?charset=utf8mb4&parseTime=True&loc=Local", os.Getenv("DATABASE_USER"), os.Getenv("DATABASE_PASSWORD"), os.Getenv("DATABASE_HOST"), os.Getenv("DATABASE_PORT"), os.Getenv("DATABASE_NAME"))
+		dsn := fmt.Sprintf("%s:%s@tcp(%s:%s)/%s?charset=utf8mb4&parseTime=True&loc=Local", os.Getenv("DATABASE_USER"), os.Getenv("DATABASE_PASSWORD"), os.Getenv("DATABASE_HOST"), os.Getenv("DATABASE_PORT"), os.Getenv("DATABASE_NAME"))
 		database.DBConn, err = gorm.Open(mysql.Open(dsn), &gorm.Config{})
 	default:
 		database.DBConn, err = gorm.Open(sqlite.Open("temp.db"), &gorm.Config{})

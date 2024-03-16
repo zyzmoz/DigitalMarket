@@ -1,6 +1,7 @@
 package infra
 
 import (
+	"fmt"
 	"os"
 
 	"github.com/gofiber/fiber/v2"
@@ -46,5 +47,5 @@ func Dispatch(app *fiber.App, db *gorm.DB, logger usecases.Logger) {
 	app.Put("/api/v1/payment", paymentCtrl.Update)
 	app.Delete("/api/v1/payment/:id", paymentCtrl.Delete)
 
-	app.Listen(":" + os.Getenv("SERVER_PORT"))
+	app.Listen(fmt.Sprintf("%s:%s", os.Getenv("SERVER_URL"), os.Getenv("SERVER_PORT")))
 }
